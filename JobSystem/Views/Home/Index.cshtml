@@ -1,0 +1,201 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Section -->
+<div class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-3">Find Your Dream Job Today</h1>
+                <p class="lead mb-4">Connect with top companies and discover opportunities that match your skills and aspirations.</p>
+                <div class="d-flex gap-3">
+                    <a asp-controller="Home" asp-action="Jobs" class="btn btn-light btn-lg">
+                        <i class="bi bi-search"></i> Find Jobs
+                    </a>
+                    <a asp-controller="Auth" asp-action="CandidateRegister" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-person-plus"></i> Join Now
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="https://img.freepik.com/free-photo/side-view-woman-working-laptop_23-2148781123.jpg" class="img-fluid rounded" alt="Job Search">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="display-4 fw-bold text-primary mb-2">
+                    <i class="bi bi-briefcase"></i>
+                    1000+
+                </div>
+                <p class="lead">Active Job Listings</p>
+            </div>
+            <div class="col-md-4">
+                <div class="display-4 fw-bold text-primary mb-2">
+                    <i class="bi bi-building"></i>
+                    500+
+                </div>
+                <p class="lead">Companies</p>
+            </div>
+            <div class="col-md-4">
+                <div class="display-4 fw-bold text-primary mb-2">
+                    <i class="bi bi-people"></i>
+                    10k+
+                </div>
+                <p class="lead">Candidates</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h4>Quick & Easy</h4>
+                        <p class="text-muted">Find and apply to jobs in just a few clicks. No complicated processes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>Career Growth</h4>
+                        <p class="text-muted">Access opportunities at top companies and advance your career.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4>Verified Companies</h4>
+                        <p class="text-muted">All companies are verified to ensure safe and legitimate opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Jobs Section -->
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">Featured Jobs</h2>
+            <a asp-controller="Home" asp-action="Jobs" class="btn btn-primary">
+                View All Jobs <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5 class="card-title">Senior Software Engineer</h5>
+                                <h6 class="text-muted">Tech Corp</h6>
+                            </div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SUlX6MgxQXUYFAswz5gwtyO6VOD4KlKOpQ&s" class="rounded-circle" style="width: 50px; height: 50px;" alt="Company Logo">
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Full-time</span>
+                            <span class="badge bg-primary">Remote</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-muted"><i class="bi bi-geo-alt"></i> New York, NY</span>
+                            <a href="#" class="btn btn-outline-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5 class="card-title">UX Designer</h5>
+                                <h6 class="text-muted">Design Studio</h6>
+                            </div>
+                            <img src="https://thewaltdisneycompany.eu/app/uploads/2024/11/image_e63bf47b-700x431.jpeg" class="rounded-circle" style="width: 50px; height: 50px;" alt="Company Logo">
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Full-time</span>
+                            <span class="badge bg-primary">On-site</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-muted"><i class="bi bi-geo-alt"></i> San Francisco, CA</span>
+                            <a href="#" class="btn btn-outline-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- For Employers Section -->
+<div class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4">For Employers</h2>
+                <p class="lead mb-4">Find the perfect candidates for your company. Post jobs and manage applications efficiently.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Post unlimited job listings
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Access to candidate database
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Advanced candidate filtering
+                    </li>
+                </ul>
+                <a asp-controller="Account" asp-action="CompanyRegistration" class="btn btn-primary btn-lg">
+                    <i class="bi bi-plus-circle"></i> Post a Job
+                </a>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="https://www.pauwelsconsulting.com/wp-content/uploads/2024/08/PauwelsConsulting_ArthurVermeylen_240611_267-medium.jpg" class="img-fluid rounded" alt="Employers">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  Call to Action -->
+<div class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h2 class="mb-4">Ready to Start Your Journey?</h2>
+        <p class="lead mb-4">Join thousands of professionals who have found their dream jobs through our platform.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a asp-controller="Account" asp-action="CandidateRegistration" class="btn btn-light btn-lg">
+                Register as Candidate
+            </a>
+            <a asp-controller="Account" asp-action="CompanyRegistration" class="btn btn-outline-light btn-lg">
+                Register as Employer
+            </a>
+        </div>
+    </div>
+</div>

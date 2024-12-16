@@ -1,0 +1,50 @@
+﻿@model JobSystem.Models.JobPostingViewModel
+
+
+<div class="modal fade" id="createJobModal" tabindex="-1" aria-labelledby="createJobModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createJobModalLabel">Create Job Posting</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="CreateJob" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="mb-3">
+                        <label asp-for="Title" class="form-label">Job Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter job title" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Location" class="form-label">Location</label>
+                        <input asp-for="Location" class="form-control" placeholder="Enter location" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Type" class="form-label">Job Type</label>
+                        <select asp-for="Type" class="form-select">
+                            <option selected disabled>Select job type</option>
+                            <option>Full-Time</option>
+                            <option>Part-Time</option>
+                            <option>Contract</option>
+                            <option>Internship</option>
+                        </select>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Salary" class="form-label">Salary</label>
+                        <input asp-for="Salary" class="form-control" placeholder="e.g., Php 50,000 - Php 70,000" />
+                        <span asp-validation-for="Salary" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label">Job Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter job description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

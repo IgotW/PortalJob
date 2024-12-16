@@ -1,0 +1,63 @@
+﻿@model JobSystem.Models.JobPostingViewModel
+
+@{
+	ViewData["Title"] = "CreateJob";
+}
+
+<div class="container py-5">
+	<div class="row justify-content-center">
+		<div class="col-md-8">
+			<div class="card shadow">
+				<div class="card-body p-4">
+					<h2 class="text-center mb-4">Create Job</h2>
+					<form asp-action="CreateJob">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<div class="row mb-3">
+							<label asp-for="Title" class="control-label">Position</label>
+							<input asp-for="Title" class="form-control" placeholder="Enter Position" />
+							<span asp-validation-for="Title" class="text-danger"></span>
+						</div>
+						<div class="row mb-3">
+							<label asp-for="Location" class="control-label">Location</label>
+							<input asp-for="Location" class="form-control" placeholder="Enter Location" />
+							<span asp-validation-for="Location" class="text-danger"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="Type" class="form-label">Type</label>
+							<select asp-for="Type" class="form-select">
+								<option selected disabled>Select Type</option>
+								<option>Full-Time</option>
+								<option>Part-Time</option>
+								<option>Remote</option>
+							</select>
+							<span asp-validation-for="Type" class="text-danger"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="Salary" class="control-label">Salary</label>
+							<input asp-for="Salary" class="form-control" placeholder="e.g., $10,000 - $20,000" />
+							<span asp-validation-for="Salary" class="text-danger"></span>
+						</div>
+						<div class="mb-3">
+							<label asp-for="Description" class="form-label">Description</label>
+							<textarea asp-for="Description" class="form-control" rows="3" placeholder="Description of your job offer"></textarea>
+							<span asp-validation-for="Description" class="text-danger"></span>
+						</div>
+						<div class="d-grid mb-3">
+							<button type="submit" class="btn btn-primary">
+								<i class="bi bi-plus-circle"></i> Create
+							</button>
+						</div>
+						<div>
+							<div class="text-center">
+								<a asp-action="CompanyDashPage" class="btn btn-sm btn-outline-primary">
+									<i class="bi bi-pencil"></i> Back to List
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
