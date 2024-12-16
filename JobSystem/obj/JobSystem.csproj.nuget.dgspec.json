@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project ELDNET\\Final\\JobSystem\\JobSystem.csproj": {}
+    "D:\\Project\\PortalJob\\JobSystem\\JobSystem.csproj": {}
   },
   "projects": {
-    "E:\\Project ELDNET\\Final\\JobSystem\\JobSystem.csproj": {
+    "D:\\Project\\PortalJob\\JobSystem\\JobSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project ELDNET\\Final\\JobSystem\\JobSystem.csproj",
+        "projectUniqueName": "D:\\Project\\PortalJob\\JobSystem\\JobSystem.csproj",
         "projectName": "JobSystem",
-        "projectPath": "E:\\Project ELDNET\\Final\\JobSystem\\JobSystem.csproj",
+        "projectPath": "D:\\Project\\PortalJob\\JobSystem\\JobSystem.csproj",
         "packagesPath": "C:\\Users\\Went\\.nuget\\packages\\",
-        "outputPath": "E:\\Project ELDNET\\Final\\JobSystem\\obj\\",
+        "outputPath": "D:\\Project\\PortalJob\\JobSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

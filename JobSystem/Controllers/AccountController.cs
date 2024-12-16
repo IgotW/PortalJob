@@ -1,10 +1,12 @@
-﻿using System.Security.Claims;
+﻿using System.ComponentModel.Design;
+using System.Security.Claims;
 using JobSystem.Entities;
 using JobSystem.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 
 namespace JobSystem.Controllers
@@ -147,20 +149,65 @@ namespace JobSystem.Controllers
         }
 
         [Authorize]
-        public IActionResult CandidateDashPage()
+        public IActionResult CandidateDashPage(string searchBy, string searchString)
         {
-            string currentUserName = HttpContext.User.Identity.Name;
+            //var jobPostings = _context.JobPostings.AsQueryable();
+            //// Ensure the user is logged in
+            //string currentUserName = HttpContext.User.Identity.Name;
+            //if (string.IsNullOrEmpty(currentUserName))
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
 
+            //// Check if the search string is provided
+            //if (string.IsNullOrEmpty(searchString))
+            //{
+            //    // Return the view with no results if the search string is empty
+            //    ViewData["ErrorMessage"] = "Please enter a valid search term.";
+            //    return View(new List<JobPosting>());
+            //}
+
+            //// Search for matching job postings in the database
+            //var searchResults = _context.JobPostings
+            //    .Where(x => x.Title.Contains(searchString) ||
+            //                x.CompanyName.Contains(searchString) ||
+            //                x.Location.Contains(searchString))
+            //    .ToList();
+
+            //// Check if there are any results
+            //if (searchResults.Count == 0)
+            //{
+            //    ViewData["ErrorMessage"] = "No matching jobs found.";
+            //}
+
+            //return View(searchResults);
+            // Ensure the user is logged in
+            string currentUserName = HttpContext.User.Identity.Name;
             if (string.IsNullOrEmpty(currentUserName))
             {
-                // If the user is not logged in, redirect to the login page or show an error
                 return RedirectToAction("Login", "Account");
             }
 
-            // Fetch all job postings from the database
-            var jobPostings = _context.JobPostings.ToList();
+            // Start with all job postings
+            var jobPostings = _context.JobPostings.AsQueryable();
 
-            return View(jobPostings);
+            // Filter by job type if a specific type is selected
+            if (!string.IsNullOrEmpty(searchBy))
+            {
+                jobPostings = jobPostings.Where(x => x.Type == searchBy);
+            }
+
+            // Apply search filter if the search string is provided
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                jobPostings = _context.JobPostings
+                .Where(x => x.Title.Contains(searchString) ||
+                            x.CompanyName.Contains(searchString) ||
+                            x.Location.Contains(searchString));
+            }
+
+            // Convert query to a list and pass it to the view
+            return View(jobPostings.ToList());
         }
 
 
@@ -480,6 +527,7 @@ namespace JobSystem.Controllers
             {
                 Id = jobPosting.Id,
                 Title = jobPosting.Title,
+                CompanyName = jobPosting.CompanyName,
                 Location = jobPosting.Location,
                 Type = jobPosting.Type,
                 Salary = jobPosting.Salary,
@@ -553,6 +601,7 @@ namespace JobSystem.Controllers
             {
                 Id = jobPosting.Id,
                 Title = jobPosting.Title,
+                CompanyName = jobPosting.CompanyName,
                 Location = jobPosting.Location,
                 Type = jobPosting.Type,
                 Salary = jobPosting.Salary,
